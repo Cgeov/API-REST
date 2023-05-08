@@ -1,4 +1,4 @@
-package edu.udb.retrofitappcrud
+package edu.udb.retrofitappcrud.alumno
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,9 +7,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import edu.udb.retrofitappcrud.MainActivity
+import edu.udb.retrofitappcrud.R
 import okhttp3.Credentials
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -36,6 +37,9 @@ class CrearAlumnoActivity : AppCompatActivity() {
         if (datos != null) {
             auth_username = datos.getString("auth_username").toString()
             auth_password = datos.getString("auth_password").toString()
+        }else{
+            auth_username="admin"
+            auth_password = "admin123"
         }
 
         nombreEditText = findViewById(R.id.editTextNombre)
@@ -64,7 +68,7 @@ class CrearAlumnoActivity : AppCompatActivity() {
 
             // Crea una instancia de Retrofit con el cliente OkHttpClient
             val retrofit = Retrofit.Builder()
-                .baseUrl("http://200.33.51.36/api/")
+                .baseUrl("https://dsmmoviles.000webhostapp.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()
@@ -76,10 +80,10 @@ class CrearAlumnoActivity : AppCompatActivity() {
                 override fun onResponse(call: Call<Alumno>, response: Response<Alumno>) {
                     if (response.isSuccessful) {
                         Toast.makeText(this@CrearAlumnoActivity, "Alumno creado exitosamente", Toast.LENGTH_SHORT).show()
-                        val i = Intent(getBaseContext(), MainActivity::class.java)
+                        val i = Intent(getBaseContext(), mainAlumno::class.java)
                         startActivity(i)
                     } else {
-                        val error = response.errorBody()?.string()
+                        val error = response
                         Log.e("API", "Error crear alumno: $error")
                         Toast.makeText(this@CrearAlumnoActivity, "Error al crear el alumno", Toast.LENGTH_SHORT).show()
                     }
@@ -87,6 +91,7 @@ class CrearAlumnoActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<Alumno>, t: Throwable) {
+                    Log.e("ultima", "")
                     Toast.makeText(this@CrearAlumnoActivity, "Error al crear el alumno", Toast.LENGTH_SHORT).show()
                 }
             })

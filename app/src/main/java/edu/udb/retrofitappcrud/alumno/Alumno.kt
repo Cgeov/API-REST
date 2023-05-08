@@ -1,8 +1,9 @@
-package edu.udb.retrofitappcrud
+package edu.udb.retrofitappcrud.alumno
 
 data class Alumno(
     val id: Int,
     val nombre: String,
     val apellido: String,
     val edad: Int
+
 )

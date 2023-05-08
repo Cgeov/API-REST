@@ -1,4 +1,4 @@
-package edu.udb.retrofitappcrud
+package edu.udb.retrofitappcrud.alumno
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonSyntaxException
+import edu.udb.retrofitappcrud.MainActivity
+import edu.udb.retrofitappcrud.R
 import okhttp3.Credentials
 import okhttp3.OkHttpClient
 import org.json.JSONObject
@@ -54,7 +56,7 @@ class ActualizarAlumnoActivity : AppCompatActivity() {
 
         // Crea una instancia de Retrofit con el cliente OkHttpClient
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://200.33.51.36/api/")
+            .baseUrl("https://dsmmoviles.000webhostapp.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
@@ -96,7 +98,7 @@ class ActualizarAlumnoActivity : AppCompatActivity() {
                     .create()
 
                 // Realizar una solicitud PUT para actualizar el objeto Alumno
-                api.actualizarAlumno(alumnoId, alumnoActualizado).enqueue(object : Callback<Alumno> {
+                api.actualizarAlumno(alumnoId, alumnoActualizado, "actualizar").enqueue(object : Callback<Alumno> {
                     override fun onResponse(call: Call<Alumno>, response: Response<Alumno>) {
                         if (response.isSuccessful && response.body() != null) {
                             // Si la solicitud es exitosa, mostrar un mensaje de éxito en un Toast

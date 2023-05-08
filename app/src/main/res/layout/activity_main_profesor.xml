@@ -9,30 +9,29 @@
     >
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_agregar"
+        android:id="@+id/fab_agregarProfesor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="36dp"
         android:clickable="true"
-        android:theme="@style/CardView"
         android:contentDescription="TODO"
         app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintHorizontal_bias="0.873"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/ic_input_add"
         tools:ignore="MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="405dp"
-        android:layout_height="705dp"
-        android:layout_marginTop="28dp"
+        android:id="@+id/recyclerViewProfesor"
+        android:layout_width="407dp"
+        android:layout_height="709dp"
+        android:layout_marginTop="24dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
-
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

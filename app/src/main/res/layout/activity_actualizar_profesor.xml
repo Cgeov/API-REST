@@ -7,7 +7,7 @@
     >
 
     <EditText
-        android:id="@+id/nombreEditText"
+        android:id="@+id/nombreEditTextProfesor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nombre"
@@ -16,7 +16,7 @@
         />
 
     <EditText
-        android:id="@+id/apellidoEditText"
+        android:id="@+id/apellidoEditTextProfesor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="apellido"
@@ -25,7 +25,7 @@
         />
 
     <EditText
-        android:id="@+id/edadEditText"
+        android:id="@+id/edadEditTextProfesor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Edad"
@@ -34,9 +34,8 @@
         android:textColor="@color/white"
         />
 
-
     <Button
-        android:id="@+id/actualizarButton"
+        android:id="@+id/actualizarButtonProfesor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Actualizar" />

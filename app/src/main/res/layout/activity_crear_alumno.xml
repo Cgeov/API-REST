@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#393838"
+    >
 
     <TextView
         android:layout_width="match_parent"
@@ -11,28 +13,39 @@
         android:text="Agregar Nuevo Alumno"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:gravity="center" />
+        android:gravity="center"
+        android:textColor="@color/white"
+        />
 
     <EditText
         android:id="@+id/editTextNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nombre del alumno"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        />
 
     <EditText
         android:id="@+id/editTextApellido"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Apellido del alumno"
-        android:inputType="text" />
+        android:inputType="text"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        />
 
     <EditText
         android:id="@+id/editTextEdad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Edad del alumno"
-        android:inputType="number" />
+        android:inputType="number"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        />
 
     <Button
         android:id="@+id/btnGuardar"
