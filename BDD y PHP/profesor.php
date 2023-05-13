@@ -49,7 +49,7 @@ switch ($method) {
                     echo json_encode(['mensaje' => 'El profesor ha sido actualizado correctamente.']);
                     break;
                 case 'eliminar':
-                    $stmt = $pdo->prepare("DELETE FROM alumnos WHERE id = ?");
+                    $stmt = $pdo->prepare("DELETE FROM profesores WHERE id = ?");
                     $stmt->execute([$_GET['id']]);
                     echo json_encode(['mensaje' => 'El profesor ha sido eliminado correctamente.']);
                     break;
