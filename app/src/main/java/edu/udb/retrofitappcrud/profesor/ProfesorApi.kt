@@ -14,7 +14,7 @@ interface ProfesorApi {
     fun crearProfesor(@Body profesor: Profesor): Call<Profesor>
 
     @POST("profesor.php")
-    fun actualizarProfesor(@Path("id") id: Int, @Body profesor: Profesor,@Query("operacion") operacion: String): Call<Profesor>
+    fun actualizarProfesor(@Query("id") id: Int, @Body profesor: Profesor,@Query("operacion") operacion: String): Call<Profesor>
 
     @POST("profesor.php")
     fun eliminarProfesor(@Query("id") id: Int, @Query("operacion") operacion: String): Call<Void>

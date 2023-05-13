@@ -90,7 +90,7 @@ class ActualizarProfesorActivity : AppCompatActivity(){
                 //Log.e("API", "alumnoActualizado : $alumnoActualizado")
 
                 val jsonAlumnoActualizado = Gson().toJson(alumnoActualizado)
-                Log.e("API", "JSON enviado: $jsonAlumnoActualizado")
+                Log.e("API", "JSON enviado: $alumnoId")
 
                 val gson = GsonBuilder()
                     .setLenient() // Agrega esta línea para permitir JSON malformado
@@ -103,7 +103,7 @@ class ActualizarProfesorActivity : AppCompatActivity(){
                         if (response.isSuccessful && response.body() != null) {
                             // Si la solicitud es exitosa, mostrar un mensaje de éxito en un Toast
                             Toast.makeText(this@ActualizarProfesorActivity, "Profesor actualizado correctamente", Toast.LENGTH_SHORT).show()
-                            val i = Intent(getBaseContext(), MainActivity::class.java)
+                            val i = Intent(getBaseContext(), mainProfesor::class.java)
                             startActivity(i)
                         } else {
                             // Si la respuesta del servidor no es exitosa, manejar el error

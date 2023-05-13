@@ -144,6 +144,7 @@ class mainProfesor : AppCompatActivity() {
         llamada.enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 if (response.isSuccessful) {
+                    Log.e("ERORRRRR", response.toString())
                     Toast.makeText(this@mainProfesor, "Profesor eliminado", Toast.LENGTH_SHORT).show()
                     cargarDatos(api)
                 } else {

@@ -103,7 +103,7 @@ class ActualizarAlumnoActivity : AppCompatActivity() {
                         if (response.isSuccessful && response.body() != null) {
                             // Si la solicitud es exitosa, mostrar un mensaje de éxito en un Toast
                             Toast.makeText(this@ActualizarAlumnoActivity, "Alumno actualizado correctamente", Toast.LENGTH_SHORT).show()
-                            val i = Intent(getBaseContext(), MainActivity::class.java)
+                            val i = Intent(getBaseContext(), mainAlumno::class.java)
                             startActivity(i)
                         } else {
                             // Si la respuesta del servidor no es exitosa, manejar el error
